@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs'); -%>
+
+    <h2>Add Notes</h2>
+    <form action="/add-notes" method="post">
+      <div class="form-group">
+        <label for="booktitle">Book Title</label>
+        <input type="text" class="form-control" id="booktitle" name="booktitle" placeholder="Enter Book Title">
+      </div>
+      <div class="form-group">
+        <label for="bookisbn">Book ISBN No.</label>
+        <input type="text" class="form-control" id="bookisbn" name="bookisbn" placeholder="Enter Book ISBN No.">
+      </div>
+      <div class="form-group">
+        <label for="bookisbn">Book Read Date</label>
+        <input type="date" class="form-control" id="bookreaddate" name="bookreaddate" placeholder="Enter Read Date">
+      </div>
+      <div class="form-group">
+        <label for="bookisbn">Book Rating</label>
+        <input type="text" class="form-control" id="bookrating" name="bookrating" placeholder="Enter Rating">
+      </div>
+      <div class="form-group">
+        <label for="booknotes">Book Notes</label>
+        <textarea class="form-control" id="booknotes" name="booknotes" rows="10"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    <%- include('partials/footer.ejs'); -%>

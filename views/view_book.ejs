@@ -1,0 +1,43 @@
+<%- include('partials/header.ejs'); -%>
+<% console.log("notesRow"+ notesRow[0].id) %>
+<div class="row p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+  <div class="col-6 px-0">
+    <h1 class="display-4 "><%= notesRow[0].book_name %></h1>
+    <p class="lead my-3"><strong>ISBN No.: </strong><%= notesRow[0].isbn_no %></p>
+    <p class="lead my-3"><strong>Read Date: </strong><%= notesRow[0].read_date %></p>
+    <p class="lead my-3"><strong>Book Rating: </strong><%= notesRow[0].rating %>/5</p>
+    
+  </div>
+  <div class="col-6 px-0">
+    <img
+    src="https://covers.openlibrary.org/b/isbn/<%= notesRow[0].isbn_no %>-M.jpg"
+    class="img-thumbnail rounded-start" alt="...">
+  </div>
+</div>
+  <div class="row g-5">
+    <div class="col-md-8">
+
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">My Book Notes:</h2>
+
+        <p><%= notesRow[0].book_review %></p>
+  
+      </article>
+
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <nav class="blog-pagination" aria-label="Pagination">
+            <a class="btn btn-outline-primary rounded-pill" href="/edit/<%= notesRow[0].id %>">Edit Notes</a>
+            <a class="btn btn-outline-danger rounded-pill " href="/delete/<%= notesRow[0].id %>">Delete Notes</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer.ejs'); -%>

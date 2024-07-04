@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs'); -%>
+Sort List by <a href="/recentread">Recent Read</a> OR <a href="/ratings">Ratings</a>Ratings
+  <div class="row">
+    <% for(let notes of bookNotes){%>
+    <div class="col-4">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="https://covers.openlibrary.org/b/isbn/<%= notes.isbn_no %>-M.jpg"
+              class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="card-title"><%= notes.book_name %></h4>
+              <p class="card-text"><strong>ISBN No.: </strong><%= notes.isbn_no %></p>
+              <p class="card-text"><strong>Read Date: </strong><%= notes.read_date %></p>
+              <p class="card-text"><strong>Book Rating: </strong><%= notes.rating %>/5</p>
+              <a class="btn btn-outline-secondary rounded-pill" href="/view/<%= notes.id %>">Read Notes...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-outline-primary rounded-pill" href="/add">Add New Notes</a>
+    </div>
+  </div>
+
+
+
+  <%- include('partials/footer.ejs'); -%>
